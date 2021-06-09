@@ -112,7 +112,7 @@ source registerenv/bin/activate
 #=================================================
 # INSTALL PYTHON DEPENDENCIES
 #=================================================
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 deactivate
 #=================================================
 # GENERIC FINALIZATION
