@@ -112,6 +112,7 @@ source registerenv/bin/activate
 #=================================================
 # INSTALL PYTHON DEPENDENCIES
 #=================================================
+pip3 install wheel
 pip install -r requirements.txt
 deactivate
 #=================================================
