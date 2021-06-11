@@ -18,7 +18,7 @@ ynh_clean_setup () {
 	true
 }
 # Exit if an error occurs during the execution of the script
-ynh_abort_if_errors
+set -o errexit
 
 #=================================================
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
@@ -112,7 +112,8 @@ source registerenv/bin/activate
 #=================================================
 # INSTALL PYTHON DEPENDENCIES
 #=================================================
-pip3 install -r requirements.txt
+pip3 install wheel
+pip install -r requirements.txt
 deactivate
 #=================================================
 # GENERIC FINALIZATION
