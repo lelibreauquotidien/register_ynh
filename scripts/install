@@ -106,7 +106,7 @@ ynh_add_systemd_config
 # SETUP VENV
 #=================================================
 cd $final_path
-python3 -m venv registerenv
+python3 -m venv registerenv --system-site-packages
 source registerenv/bin/activate
 
 #=================================================
