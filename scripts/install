@@ -107,7 +107,7 @@ ynh_add_systemd_config
 #=================================================
 ynh_add_config --template="sudoer" --destination="/etc/sudoers.d/$app"
 cd $final_path
-python3 -m venv registerenv
+python3 -m venv registerenv --system-site-packages
 source registerenv/bin/activate
 
 #=================================================
