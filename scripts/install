@@ -81,7 +81,7 @@ cp -a ../sources/* $final_path
 
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
+chown -R www-data:www-data "$final_path"
 
 #=================================================
 # NGINX CONFIGURATION
@@ -105,6 +105,7 @@ ynh_add_systemd_config
 #=================================================
 # SETUP VENV
 #=================================================
+ynh_add_config --template="sudoer" --destination="/etc/sudoers.d/$app"
 cd $final_path
 python3 -m venv registerenv
 source registerenv/bin/activate

@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=__APP__
-Group=__APP__
+User=www-data
+Group=www-data
 WorkingDirectory=__FINALPATH__/
 Environment="PATH=__FINALPATH__/registerenv/bin"
 ExecStart=__FINALPATH__/registerenv/bin/uwsgi --ini register.ini

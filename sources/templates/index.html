@@ -15,19 +15,19 @@
         <form action="create_user/" method="post" class="register-form">
             <div class="input-group">
                 <label for="username">Pseudo</label>
-                <input placeholder="johndoe" required type="text" name="username" id="username">
+                <input pattern="^[a-z0-9_]+$" placeholder="johndoe" required type="text" name="username" id="username">
             </div>
             <div class="input-group">
                 <label for="firstname">Prénom</label>
-                <input placeholder="John" required type="text" name="firstname" id="firstname">
+                <input pattern="^([^\W\d_]{1,30}[ ,.'-]{0,3})+$" placeholder="John" required type="text" name="firstname" id="firstname">
             </div>
             <div class="input-group">
                 <label for="lastname">Nom</label>
-                <input placeholder="Doe" required type="text" name="lastname" id="lastname">
+                <input pattern="^([^\W\d_]{1,30}[ ,.'-]{0,3})+$" placeholder="Doe" required type="text" name="lastname" id="lastname">
             </div>
             <div class="input-group mb-20">
                 <label for="password">Mot de passe (8 caractères minimum)</label>
-                <input placeholder="****************" minlength="8" required type="password" name="password" id="password">
+                <input pattern="^.{3,}$" placeholder="****************" minlength="8" required type="password" name="password" id="password">
             </div>
             <button type="submit">Valider</button>
         </form>
