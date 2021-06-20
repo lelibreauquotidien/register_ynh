@@ -25,7 +25,7 @@ form {
 .input-group > label {
   display: block;
 }
-button {
+button, .button {
 display: block;
 background-color: #2ecc71;
 color: white;
@@ -33,4 +33,5 @@ border: 0;
 border-radius: 5px;
 padding: 5px;
 font-size: 20px;
+text-decoration: none;
 }

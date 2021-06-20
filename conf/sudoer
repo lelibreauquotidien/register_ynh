@@ -1,1 +1,1 @@
-_APP__ ALL=(root) NOPASSWD: /usr/bin/yunohost user create
+__APP__ ALL=(root) NOPASSWD: /usr/bin/yunohost user create *

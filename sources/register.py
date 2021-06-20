@@ -1,5 +1,5 @@
 import re
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, request, Response, redirect
 import sys
 import os
 
@@ -26,10 +26,12 @@ def create_user():
     if bool(unameMatch) == True and bool(fnameMatch) == True and bool(lnameMatch) == True and bool(passwordMatch) == True:
 
         if form["username"] and form["firstname"] and form["lastname"] and form["password"] and len(form["password"]) >= 8:
-            # user_create(username=form["username"], firstname=form["firstname"],
-            #            lastname=form["lastname"], domain="saphir.eu.org", password=form["password"])
-            os.system("sudo yunohost user create" + form["username"] + "-f " + form["firstname"] +
-                      "-l " + form["lastname"] + "-p " + form["password"] + "-d saphir.eu.org")
+            exitCode = os.system("sudo yunohost user create " + form["username"] + " -f  " + form["firstname"] +
+                                 " -l " + form["lastname"] + " -p " + form["password"] + " -d saphir.eu.org")
+            if exitCode == 0:
+                return redirect('/success')
+            elif exitCode == 256:
+                return redirect('/already-used')                  
         else:
             return 'Error while saving user information'
     else:
@@ -37,7 +39,16 @@ def create_user():
             "Bip-bop",
             status=500,
         )
+@app.route('/success/')
+def success():
+    return render_template('success.html')
 
+@app.route('/already-used/')
+def already_used():
+    return render_template('already-used.html')
 
 if __name__ == "__main__":
     app.run()
+# Exit codes
+# 0: Valid
+# User already exists: 256
