@@ -17,6 +17,12 @@
                 <label for="username">Pseudo</label>
                 <input pattern="^[a-z0-9_]+$" placeholder="johndoe" required type="text" name="username" id="username">
             </div>
+            {% if ask_email == "true" %}
+            <div class="input-group">
+                <label for="username">Email</label>
+                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="john@doe.com" required type="email" name="email" id="email">
+            </div> 
+            {% endif %}          
             <div class="input-group">
                 <label for="firstname">Prénom</label>
                 <input pattern="^([^\W\d_]{1,30}[ ,.'-]{0,3})+$" placeholder="John" required type="text" name="firstname" id="firstname">
