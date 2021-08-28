@@ -9,8 +9,6 @@ Group=www-data
 WorkingDirectory=__FINALPATH__/
 Environment="PATH=__FINALPATH__/registerenv/bin"
 ExecStart=__FINALPATH__/registerenv/bin/uwsgi --ini register.ini
-StandardOutput=append:/var/log/__APP__/__APP__.log
-StandardError=inherit
 
 [Install]
 WantedBy=multi-user.target
