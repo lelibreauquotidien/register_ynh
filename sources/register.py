@@ -36,7 +36,7 @@ def create_user():
             createExitCode = os.system("sudo yunohost user create " + form["username"] + " -f  " + form["firstname"] +
                                  " -l " + form["lastname"] + " -p " + form["password"] + " -d saphir.eu.org")
             if ask_email == "true":
-                addMailExitCode= os.system("sudo yunohost user update " + form["username"] + " --add-mailfoward" + form["email"])          
+                addMailExitCode= os.system("sudo yunohost user update " + form["username"] + " --add-mailforward " + form["email"])          
             if createExitCode == 0:
                 if ask_email == "true":
                     if addMailExitCode == 0:

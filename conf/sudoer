@@ -1,2 +1,2 @@
 __APP__ ALL=(root) NOPASSWD:/usr/bin/yunohost user create *
-__APP__ ALL=(root) NOPASSWD:/usr/bin/sudo yunohost user update --add-mailfoward *
+__APP__ ALL=(root) NOPASSWD:/usr/bin/yunohost user update --add-mailfoward *
