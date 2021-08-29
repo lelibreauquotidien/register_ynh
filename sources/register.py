@@ -12,7 +12,7 @@ ask_email=config["ask-email"]["enabled"]
 unamePattern = re.compile(r"^[a-z0-9_]+$")
 namePattern = re.compile(r"^([^\W\d_]{1,30}[ ,.'-]{0,3})+$")
 passwordPattern = re.compile(r"^.{3,}$")
-emailPattern = re.compile(r"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+emailPattern = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
 
 app = Flask(__name__)
 
